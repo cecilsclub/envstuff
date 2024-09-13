@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - run: |
+          echo env.SECURITY_GROUP
+
