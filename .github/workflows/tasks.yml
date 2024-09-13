@@ -9,9 +9,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: development
+    environment: ${{ startsWith(github.ref,'refs/heads/release') && 'production' || 'development' }}
 
     steps:
       - run: |
           echo ${{ vars.SECURITY_GROUP }}
+
 
